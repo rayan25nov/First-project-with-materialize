@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>My sample page</title>
+    <link rel="stylesheet" href="style.css" />
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -49,13 +50,7 @@
     </div>
     <!-- Image that can be change On Click using JavaScript -->
     <img
-      style="
-        background: white;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-        border-radius: 10px;
-        display: block;
-        margin: auto;
-      "
+      class="cng-image"
       src="img/nature.jpg"
       alt="Beautiful nature"
       title="Beautiful Seanary"
@@ -83,27 +78,8 @@
           type="text"
           placeholder="Enter Heading"
           id="input"
-          style="
-            flex: 3;
-            font: inherit;
-            padding: 0.35rem 0.35rem;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-          "
         />
-        <button
-          style="
-            font: inherit;
-            border: 1px solid #4f005f;
-            background: #4f005f;
-            color: white;
-            padding: 0.75rem 3.5rem;
-            cursor: pointer;
-            font-size: 1.15rem;
-            border-radius: 30px;
-          "
-          onclick="headingChanger()"
-        >
+        <button class="button" onclick="headingChanger()">
           <a href="#heading" style="color: white">Change Heading</a>
         </button>
       </div>
@@ -136,12 +112,13 @@
     <!-- Material box Materialize  -->
     <figure class="container">
       <img
-        class="materialboxed"
+        class="row offset-s2 materialboxed"
         width="600"
         src="img/nightSky.jpg"
         alt="Beautiful Stars"
+        id="night"
       />
-      <figcaption class="flow-text">
+      <figcaption class="flow-text figcpt">
         A Beautiful Image of a Night Sky.
       </figcaption>
     </figure>
@@ -196,7 +173,11 @@
         ><img src="img/superCar.jpg" alt="Car"
       /></a>
       <a class="carousel-item" href="#three!"
-        ><img width="200" class="materialboxed" src="img/girl.jpg" alt="girl"
+        ><img
+          width="200"
+          class="materialboxed girls"
+          src="img/girl.jpg"
+          alt="girl"
       /></a>
       <a class="carousel-item" href="#four!"
         ><img src="img/fire-works.jpg" alt="firwork"
@@ -207,7 +188,7 @@
       <a class="carousel-item" href="#six!"
         ><img
           width="200"
-          class="materialboxed"
+          class="materialboxed girls"
           src="img/girl2.jpg"
           alt="2ndGirl"
       /></a>
@@ -242,24 +223,8 @@
     </div>
     <br /><br />
 
-    <script>
-      /* global document*/
+    <script src="script.js"></script>
 
-      const headingChanger = () => {
-        let inputText = document.getElementById("input").value;
-        document.getElementById("heading").innerHTML = inputText.toUpperCase();
-      };
-
-      const imageChanger = () => {
-        const natureimage = document.querySelector("img");
-        let myimages = natureimage.getAttribute("src");
-        if (myimages === "img/nature.jpg") {
-          natureimage.setAttribute("src", "img/beach.jpg");
-        } else {
-          natureimage.setAttribute("src", "img/nature.jpg");
-        }
-      };
-    </script>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
